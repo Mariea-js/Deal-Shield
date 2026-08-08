@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lato", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: "EB Garamond", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-primary: oklch(0.2077 0.0398 265.75);
+  --color-on-primary: oklch(1.0 0 0);
+  --color-secondary: oklch(0.2795 0.0368 260.03);
+  --color-accent: oklch(0.7227 0.192 149.58);
+  --color-background: oklch(0.1288 0.0406 264.7);
+  --color-foreground: oklch(0.9842 0.0034 247.86);
+  --color-muted: oklch(0.2396 0.0332 273.5);
+  --color-text-secondary: oklch(0.84 0.015 255);
+  --color-text-muted: oklch(0.78 0.02 260);
+  --color-border: oklch(0.3717 0.0392 257.29);
+  --color-destructive: oklch(0.6368 0.2078 25.33);
+  --color-ring: oklch(0.2077 0.0398 265.75);
+
+  --color-risk-low: oklch(0.7227 0.192 149.58);
+  --color-risk-medium: oklch(0.7698 0.1887 82.08);
+  --color-risk-high: oklch(0.7011 0.1832 43.27);
+  --color-risk-critical: oklch(0.6368 0.2078 25.33);
+  --color-risk-na: oklch(0.5533 0.0113 277.41);
+
+  --color-brand: #2563EB;
+}
+
+/* ── Light theme overrides ── */
+[data-theme="light"] {
+  --color-primary: #2563EB;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #FFFFFF;
+  --color-accent: #16A34A;
+  --color-background: #F8FAFC;
+  --color-foreground: #0F172A;
+  --color-muted: #F1F5F9;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-border: #E2E8F0;
+  --color-destructive: #DC2626;
+  --color-ring: #2563EB;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image: radial-gradient(oklch(0.3717 0.0392 257.29 / 15%) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow effect */
+.bg-glow {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    oklch(0.2077 0.0398 265.75 / 60%) 0%,
+    oklch(0.2077 0.0398 265.75 / 20%) 40%,
+    transparent 70%
+  );
+}
+
+/* Smooth color transitions — skipped when user prefers reduced motion */
+* {
+  transition: background-color 150ms ease-out, border-color 150ms ease-out,
+    color 150ms ease-out, opacity 150ms ease-out, transform 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
