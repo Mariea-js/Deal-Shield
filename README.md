@@ -222,7 +222,7 @@ AI-generated interpretations may be incomplete or incorrect. Public-web vendor i
 The system is intended to support preliminary review, not replace qualified legal, compliance, procurement, or financial professionals.
 
 ---
-
+## Project Repository
 
 [View Deal Shield on GitHub](https://github.com/Mariea-js/Deal-Shield)
 
